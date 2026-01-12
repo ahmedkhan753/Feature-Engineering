@@ -33,3 +33,17 @@ print(np.round(x_train.describe(), 1))
 
 # New train data with scaling 
 print(np.round(x_train_scaled.describe(), 1))
+
+# Plotting 
+fig, (ax1, ax2) = plt.subplots(ncols=2, figsize= (12, 5))
+
+# before scaling
+ax1.set_title("Before scaling")
+sns.kdeplot(x_train['Alcohol'], ax=ax1)
+sns.kdeplot(x_train['Malic acid'], ax=ax1)
+
+# After scaling
+ax2.set_title('After standard scaling')
+sns.kdeplot(x_train_scaled['Alcohol'], ax=ax2)
+sns.kdeplot(x_train_scaled['Malic acid'], ax=ax2)
+plt.show()
